@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="/static/css/font.css"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/static/css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        table {
+            width: 210px;
+        }
+        th{ text-align: center;}
+        td {
+            width : 70px;
+            padding: 10px;
+            table-layout : fixed;
+            text-align: center;
+            
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+<!-- 기본 템플릿 안에 삽입될 내용 Start -->
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'sys_mon' %}">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">FAN Monitoring</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'sys_mon' %}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>ALL System</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            View-Detail Server
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>View-Detail Device</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">View-Detail Device</h6>
+                    <a class="collapse-item" href="{% url 'sdp' %}">SDP</a>
+                    <a class="collapse-item" href="{% url 'fdp' %}">FDP</a>
+                    <a class="collapse-item" href="{% url 'drf' %}">DRF</a>
+                    <a class="collapse-item" href="{% url 'sdr' %}">SDR</a>
+                    <a class="collapse-item" href="{% url 'efs' %}">EFS</a>
+                    <a class="collapse-item" href="{% url 'rcom' %}">RCOM</a>
+                    <a class="collapse-item" href="{% url 'app' %}">APP</a>
+                    <a class="collapse-item" href="{% url 'nms' %}">NMS</a>
+                    <a class="collapse-item" href="{% url 'was' %}">WAS</a>
+                    <a class="collapse-item" href="{% url 'etc' %}">ETC</a>
+                    <a class="collapse-item" href="{% url 'test' %}">TEST</a>
+                </div>
+            </div>
+        </li>
+
+        <!-- Nav Item - Utilities Collapse Menu
+        </li> -->
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Log
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{% url 'log' %}" >
+                <i class="fas fa-fw fa-folder"></i>
+                Log
+            </a>
+            <!-- <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{% url 'log' %}">전체 로그 확인</a>
+                    <h6 class="collapse-header">SDP</h6>
+                    <a class="collapse-item" href="./login.html">o1sdp01</a>
+                    <a class="collapse-item" href="./register.html">o1sdp02</a>
+                    <a class="collapse-item" href="./forgot-password.html">o1sdp03</a>
+                    <a class="collapse-item" href="./forgot-password.html">o1sdp04</a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">FDP</h6>
+                    <a class="collapse-item" href="./404.html">o1fdp01</a>
+                    <a class="collapse-item" href="./blank.html">o1fdp02</a>
+                    <a class="collapse-item" href="./blank.html">o1fdp03</a>
+                    <a class="collapse-item" href="./blank.html">o1fdp04</a>
+                    <h6 class="collapse-header">EFS</h6>
+                    <a class="collapse-item" href="./login.html">o1efs01</a>
+                    <a class="collapse-item" href="./register.html">o1efs02</a>
+                    <a class="collapse-item" href="./forgot-password.html">o1efs03</a>
+                    <a class="collapse-item" href="./forgot-password.html">o1efs04</a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">EXT</h6>
+                    <a class="collapse-item" href="./login.html">o1ext01</a>
+                    <a class="collapse-item" href="./register.html">o1ext02</a>
+                    <div class="collapse-divider"></div>
+                </div>
+            </div> -->
+        </li>
+
+        <!-- Nav Item - Charts
+    
+    End of Sidebar -->
+    </ul>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                Incheon ACC
+
+                <ul class="navbar-nav ml-auto">
+                        <!-- Dropdown - Messages -->
+                        {% if user.is_authenticated %}
+                        <a button type="button" class="btn btn-primary" href="{% url 'common:logout' %}">Logout</a>
+                        {% else %}
+                        <a button type="button" class="btn btn-primary" href="{% url 'common:login' %}">Login / Register</a>
+                        {% endif %}
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <!-- Dropdown - User Information -->
+                    </li>
+
+                </ul>
+
+            </nav>
+            <!-- End of Topbar -->
+
+<div class="container my-3">
+    <div class="row my-3">
+        <div class="select-date; col-5">
+            <label for="startday">Start</label>
+            <input type="date" name="startday" id="startday">
+            <label for="endday">End</label>
+            <input type="date" name="endday" id="endday">
+        </div>
+        <div class="select-option; col-3">
+            <label for="select_device">Select Device</label>
+            <select name="select_device" id="select_device">
+                <option value="">Select All</option>
+                {% if data_device %}
+                {% for device in data_device %}
+                <option value="{{ device.svr_name }}">{{ device.svr_name }}</option>
+                {% endfor %}
+                {% endif %}
+            </select>
+        </div>
+        <div class="col-4">
+
+            <div class="input-group">
+                <label for="search_kw">Keyword</label>
+                <input type="text" id="search_kw" class="form-control" value="{{ kw|default_if_none:'' }}">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="btn_search">Search</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr class="table-dark">
+                <th>Name</th>
+                <th>FAN num</th>
+                <th>Equipped</th>
+                <th>Condition</th>
+                <th>Date-time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if data_fan %}
+            {% for log in data_fan %}
+            <tr>
+                <td>
+                    {{ log.device.svr_name }}
+                </td>
+                <td>
+                    {{ log.fan_name }}
+                </td>
+                <td>
+                    {{ log.fan_status }}
+                </td>
+                <td>
+                    {{ log.fan_health }}
+                </td>
+                <td>
+                    {{ log.created_time | date:'Y-m-d H:i' }}
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    <ul class="pagination justify-content-center">
+        {% if data_fan.has_previous %}
+        <li class="page-item">
+            <a class="page-link" data-page = "{{ data_fan.previous_page_number }}" href="javascript:void(0)">Previous</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" area-disabled="true" href="#">Previous</a>
+        </li>
+        {% endif %}
+        {% for page_number in data_fan.paginator.page_range %}
+        {% if page_number >= data_fan.number|add:-5 and page_number <= data_fan.number|add:5 %}
+        {% if page_number == data_fan.number %}
+        <li class="page-item active" aria-current="page">
+            <a class="page-link" data-page="{{ page_number }}" href="javascript:void(0)">{{ page_number }}</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link" data-page="{{ page_number }}" href="javascript:void(0)">{{ page_number }}</a>
+        </li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        {% if data_fan.has_next %}
+        <li class="page-item">
+            <a class="page-link" data-page="{{ data_fan.next_page_number }}" href="javascript:void(0)">Next</a>
+        </li>
+        {% else %}
+        <li class="page-item diabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
+<form id="searchForm" method="get" action="{% url 'log' %}">
+    <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
+    <input type="hidden" id="sd" name="sd" value="{{ sd|default_if_none:'' }}">
+    <input type="hidden" id="ed" name="ed" value="{{ ed|default_if_none:'' }}">
+    <input type="hidden" id="dv" name="dv" value="{{ dv|default_if_none:'' }}">
+    <input type="hidden" id="page" name="page" value="{{ page }}">
+</form>
+
+<script type='text/javascript'>
+    const page_elements = document.getElementsByClassName("page-link");
+    Array.from(page_elements).forEach(function(element) {
+        element.addEventListener('click', function(){
+            document.getElementById('page').value = this.dataset.page;
+            document.getElementById('searchForm').submit();
+        });
+    }); 
+    const btn_search = document.getElementById("btn_search");
+    btn_search.addEventListener('click', function(){
+        document.getElementById('kw').value = document.getElementById('search_kw').value;
+        document.getElementById('sd').value = document.getElementById('startday').value;
+        document.getElementById('ed').value = document.getElementById('endday').value;
+        document.getElementById('dv').value = document.getElementById('select_device').value;
+        document.getElementById('page').value=1;
+        document.getElementById('searchForm').submit();
+    });
+    </script>
+    
+</div>
+</div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/static/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/static/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/static/js/demo/chart-area-demo.js"></script>
+    <script src="/static/js/demo/chart-pie-demo.js"></script>
+<!-- 기본 템플릿 안에 삽입될 내용 End -->
+</body>
+</html>

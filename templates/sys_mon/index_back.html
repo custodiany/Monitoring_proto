@@ -1,0 +1,52 @@
+{% load static %}
+<head>
+    <meta http-equiv="refresh" content="5">
+    <style>
+        tr{
+            text-align: center;
+        }
+        td{
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+
+<div class="container my-3">
+    <table class="table">
+        <thead>
+        <tr class="table-dark">
+            <th>장비명</th>
+            <th>Fan번호</th>
+            <th>장착여부</th>
+            <th>Fan상태</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="6" text-align: center>{{ data_device.0.svr_name }}</td>
+            {% for fan in data_fan %}
+                <td>{{ fan.fan_name }}</td>
+                {% if fan.fan_status == "Enabled" %}
+                <td><img src="/static/images/on.PNG" style="height: 8%; width:8%;" /></td>
+                {% else %}
+                <td><img src="/static/images/off.PNG" style="height: 8%; width:8%;" /> </td>
+                {% endif %}
+                {% if fan.fan_health == "OK" %}
+                <td><img src="/static/images/green.PNG" style="height: 13%; width:13%;" /></td>
+                {% elif fan.fan_health == "0" %}
+                <td><img src="/static/images/amber.PNG" style="height: 13%; width:13%;" /></td>
+                {% else %}
+                <td><img src="/static/images/red.PNG" style="height: 13%; width:13%;" /> </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+<!--
+    bootstrap 적용 및 이미지 적용시 setting.py에 Static DIR 설정하기(필수)
+-->

@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% block content %}
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">System Monitoring</h1>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">SDP
+                                                {% if sdp %}
+                                                <td>
+                                                    <img src="/static/images/red.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% else %}
+                                                <td>
+                                                    <img src="/static/images/green.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">FDP
+                                                {% if fdp %}
+                                                <td>
+                                                    <img src="/static/images/red.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% else %}
+                                                <td>
+                                                    <img src="/static/images/green.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">DRF
+                                                {% if drf %}
+                                                <td>
+                                                    <img src="/static/images/red.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% else %}
+                                                <td>
+                                                    <img src="/static/images/green.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">SDR
+                                                {% if sdr %}
+                                                <td>
+                                                    <img src="/static/images/red.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% else %}
+                                                <td>
+                                                    <img src="/static/images/green.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">EFS
+                                                {% if efs %}
+                                                <td>
+                                                    <img src="/static/images/red.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% else %}
+                                                <td>
+                                                    <img src="/static/images/green.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">RCOM
+                                                {% if rcom %}
+                                                <td>
+                                                    <img src="/static/images/red.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% else %}
+                                                <td>
+                                                    <img src="/static/images/green.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">APP
+                                                {% if app %}
+                                                <td>
+                                                    <img src="/static/images/red.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% else %}
+                                                <td>
+                                                    <img src="/static/images/green.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">NMS
+                                                {% if nms %}
+                                                <td>
+                                                    <img src="/static/images/red.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% else %}
+                                                <td>
+                                                    <img src="/static/images/green.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">WAS
+                                                {% if was %}
+                                                <td>
+                                                    <img src="/static/images/red.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% else %}
+                                                <td>
+                                                    <img src="/static/images/green.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">ETC
+                                                {% if etc %}
+                                                <td>
+                                                    <img src="/static/images/red.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% else %}
+                                                <td>
+                                                    <img src="/static/images/green.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">TEST
+                                                {% if test %}
+                                                <td>
+                                                    <img src="/static/images/red.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% else %}
+                                                <td>
+                                                    <img src="/static/images/green.PNG" style="height: 5%; width:5%;" />
+                                                </td>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ 
+
+
+    <!-- Logout Modal-->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/static/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/static/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/static/js/demo/chart-area-demo.js"></script>
+    <script src="/static/js/demo/chart-pie-demo.js"></script>
+
+
+    {% endblock %}
